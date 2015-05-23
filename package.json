@@ -1,20 +1,24 @@
 {
-  "name": "v8-promise",
-  "version": "1.0.4",
+  "name": "v8-promise-module",
+  "version": "1.1.0",
   "description": "A Promise polyfill adapted from V8",
   "main": "v8-promise.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zenparsing/v8-promise.git"
-  },
+  "repository": "pH200/v8-promise-module",
   "keywords": [
     "promise",
     "polyfill"
   ],
-  "author": "zenparsing",
+  "author": "pH200 <ph.minamo@cytisan.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zenparsing/v8-promise/issues"
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "mocha": "^2.2.5",
+    "promises-aplus-tests": "*",
+    "testem": "^0.8.3"
   },
-  "homepage": "https://github.com/zenparsing/v8-promise"
+  "scripts": {
+    "test": "promises-aplus-tests test/adapter",
+    "test-browser": "testem",
+    "travis-test": "npm run test && testem ci -l Firefox"
+  }
 }

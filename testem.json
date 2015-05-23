@@ -1,0 +1,14 @@
+{
+    "framework": "mocha",
+    "serve_files": [
+      "test/bundle.js"
+    ],
+    "src_files": [
+      "v8-promise.js",
+      "test/adapter.js",
+      "test/test.js"
+    ],
+    "before_tests": "browserify test/test.js -o test/bundle.js",
+    "on_exit": "rm test/bundle.js",
+    "launch_in_dev": [ "chrome" ]
+}

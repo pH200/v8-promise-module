@@ -1,30 +1,25 @@
-## v8-promise ##
+# v8-promise-module
 
-**v8-promise** is a Promise polyfill for JS, adapted from V8 source code.  It passes
-Promise A+ tests on all major browsers and Node.
+[![Build Status](https://travis-ci.org/pH200/v8-promise-module.svg)](https://travis-ci.org/pH200/v8-promise-module)
 
-### Usage ###
+**v8-promise-module** is a Promise polyfill for JS, adapted from V8 source code.
+It passes [Promise A+ tests](https://github.com/promises-aplus/promises-tests)
+on all major browsers and Node.
 
-In browsers, just point a script tag to **v8-promise.js**.
-
-```html
-<script src="/my-scripts/v8-promise.js"></script>
-```
-
-You can also install with bower.
+## Usage
 
 ```
-bower install v8-promise
+npm install v8-promise-module
 ```
 
-In Node, install with NPM.
-
-```
-npm install v8-promise
+```js
+var Promise = require('v8-promise-module');
 ```
 
-Or just copy **v8-promise.js** into your project and `require` it.
+## v8-promise
 
-Once loaded, simply use the `Promise` constructor.
+v8-promise-module is a fork of [v8-promise]. v8-promise-module is a CommonJS
+module instead of a polyfill script that injects Promise to global when
+Promise is not defined on global.
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[v8-promise]: https://github.com/zenparsing/v8-promise

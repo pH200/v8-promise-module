@@ -1,6 +1,6 @@
 (function() { "use strict";
 
-// Find global variable and exit if Promise is defined on it
+// Find global variable
 
 var Global = (function() {
     if (typeof window !== "undefined" && window && window.window === window)
@@ -9,9 +9,6 @@ var Global = (function() {
         return global;
     throw new Error("Unable to determine global object");
 })();
-
-if (typeof Global.Promise === "function")
-    return;
 
 // Create an efficient microtask queueing mechanism
 
@@ -376,7 +373,7 @@ function PromiseOne(values) {
 // -------------------------------------------------------------------
 // Install exported functions.
 
-AddNamedProperty(Global, 'Promise', $Promise, DONT_ENUM);
+// AddNamedProperty(Global, 'Promise', $Promise, DONT_ENUM);
 
 InstallFunctions($Promise, DONT_ENUM, [
     "defer", PromiseDeferred,
@@ -392,5 +389,7 @@ InstallFunctions($Promise.prototype, DONT_ENUM, [
     "then", PromiseThen,
     "catch", PromiseCatch
 ]);
+
+module.exports = $Promise;
 
 })();
